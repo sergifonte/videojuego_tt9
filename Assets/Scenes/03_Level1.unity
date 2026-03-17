@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 512693525}
   - component: {fileID: 512693524}
   m_Layer: 0
-  m_Name: Character empty
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 534193232}
   - component: {fileID: 534193231}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Floor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 1019067136}
   - component: {fileID: 1019067135}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Floor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 1612847942}
   - component: {fileID: 1612847941}
   m_Layer: 0
-  m_Name: Cara
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 1922405542}
   - component: {fileID: 1922405541}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
