@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MonoBehaviour
 {
     public float speed = 6f;
@@ -21,36 +20,42 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Jump();
+        HandleMovement();
         ApplyGravity();
     }
 
-    void Move()
+    void HandleMovement()
     {
         Vector3 move = new Vector3(input.MoveInput.x, 0, input.MoveInput.y);
+        Transform cam = Camera.main.transform;
+        Vector3 camForward = cam.forward;
+        camForward.y = 0;
+        camForward.Normalize();
 
-        if (move.magnitude > 0.1f)
+        Vector3 camRight = cam.right;
+        camRight.y = 0;
+        camRight.Normalize();
+
+        Vector3 moveDirection = camForward * move.z + camRight * move.x;
+
+        if (moveDirection.magnitude > 0.1f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(move);
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        controller.Move(move * speed * Time.deltaTime);
-    }
-
-    void Jump()
-    {
         if (controller.isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
         if (controller.isGrounded && input.JumpPressed)
             velocity.y = jumpForce;
+
+        Vector3 finalMove = moveDirection * speed + new Vector3(0, velocity.y, 0);
+        controller.Move(finalMove * Time.deltaTime);
     }
 
     void ApplyGravity()
     {
         velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
     }
 }
