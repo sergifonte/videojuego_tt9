@@ -38,5 +38,4 @@ public class Mover : MonoBehaviour
         }
 
     }
-
 }
