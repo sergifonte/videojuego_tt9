@@ -5725,8 +5725,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015046687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12981494, y: 0.86456084, z: -0.28621635, w: 0.3921261}
-  m_LocalPosition: {x: 4.84, y: 2.5, z: 20.35}
+  m_LocalRotation: {x: 0, y: 0.946234, z: -0.32348305, w: 0}
+  m_LocalPosition: {x: 6.73, y: 3.6, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5854,9 +5854,9 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: 0
+        x: 0.03000021
         y: 1
-        z: 2.63
+        z: 7.330002
       TangentIn:
         x: 0
         y: 0
@@ -5867,14 +5867,14 @@ MonoBehaviour:
         z: 0
       Rotation:
         value:
-          x: 0
-          y: 0
-          z: 0
-          w: 1
+          x: 0.36160976
+          y: 0.70128095
+          z: -0.11959511
+          w: 0.60261136
     - Position:
-        x: 0
+        x: 12.830001
         y: 1
-        z: 2.63
+        z: 7.6900024
       TangentIn:
         x: 0
         y: 0
@@ -5885,14 +5885,14 @@ MonoBehaviour:
         z: 0
       Rotation:
         value:
-          x: 0
-          y: -0.6604698
-          z: -0
-          w: 0.75085264
+          x: 0.69243956
+          y: 0.6339146
+          z: 0.20774074
+          w: 0.27481565
     - Position:
-        x: -46.412697
+        x: 15.431962
         y: 1
-        z: 0.5898342
+        z: -35.037327
       TangentIn:
         x: 0
         y: 0
@@ -5903,14 +5903,14 @@ MonoBehaviour:
         z: 0
       Rotation:
         value:
-          x: 0.030998202
-          y: -0.37413654
-          z: 0.014722339
-          w: 0.9267385
+          x: -0.0064162677
+          y: 0.9220662
+          z: -0.023749191
+          w: -0.38624972
     - Position:
-        x: -45.346497
+        x: -30.8
         y: 1
-        z: 41.582077
+        z: -35.07
       TangentIn:
         x: 0
         y: 0
@@ -5921,28 +5921,46 @@ MonoBehaviour:
         z: 0
       Rotation:
         value:
-          x: 0.015595446
-          y: -0.0087384395
-          z: -0.0009672276
-          w: -0.9998397
+          x: 0.056112364
+          y: -0.42372072
+          z: 0.027836168
+          w: 0.9036245
     - Position:
-        x: -22.203312
+        x: -30.7
         y: 1
-        z: 41.461067
+        z: 0.5300026
       TangentIn:
-        x: -0
-        y: -0
-        z: -2.31435
+        x: 0
+        y: 0
+        z: 0
       TangentOut:
         x: 0
         y: 0
-        z: 2.31435
+        z: 0
       Rotation:
         value:
-          x: -9.252926e-11
-          y: 0.70895296
-          z: -9.204672e-11
-          w: 0.7052557
+          x: 0.06072052
+          y: 0.3282276
+          z: -0.018248547
+          w: 0.94246835
+    - Position:
+        x: -7.6227865
+        y: 1
+        z: 1.6459045
+      TangentIn:
+        x: 0
+        y: 0
+        z: 0
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0
+      Rotation:
+        value:
+          x: -0.0001304678
+          y: 0.6898193
+          z: -0.00013692903
+          w: 0.7239816
     m_MetaData:
     - Mode: 1
       Tension: 0.5
@@ -5950,76 +5968,6 @@ MonoBehaviour:
       Tension: 0.5
     - Mode: 1
       Tension: 0.5
-    - Mode: 1
-      Tension: 0.5
-    - Mode: 0
-      Tension: 0.5
-    m_Closed: 0
-    m_IntData:
-      m_Data: []
-    m_FloatData:
-      m_Data: []
-    m_Float4Data:
-      m_Data: []
-    m_ObjectData:
-      m_Data: []
-  - m_EditModeType: 1
-    m_Knots:
-    - Position:
-        x: -16.119751
-        y: 1
-        z: 40.34606
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: 0.06052374
-          y: 0.67294794
-          z: -0.06471596
-          w: 0.7343635
-    - Position:
-        x: 1.5773029
-        y: 1
-        z: 41.009834
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: 0.019903282
-          y: 0.9157625
-          z: 0.028474174
-          w: 0.40021515
-    - Position:
-        x: 0
-        y: 1
-        z: 2.63
-      TangentIn:
-        x: 0
-        y: 0
-        z: 0
-      TangentOut:
-        x: 0
-        y: 0
-        z: 0
-      Rotation:
-        value:
-          x: 0.0051498027
-          y: 0.99359864
-          z: 0.112369314
-          w: -0.010409208
-    m_MetaData:
     - Mode: 1
       Tension: 0.5
     - Mode: 1
@@ -6036,14 +5984,7 @@ MonoBehaviour:
     m_ObjectData:
       m_Data: []
   m_Knots:
-    m_KnotsLink:
-    - Knots:
-      - Spline: 0
-        Knot: 0
-      - Spline: 0
-        Knot: 1
-      - Spline: 1
-        Knot: 2
+    m_KnotsLink: []
 --- !u!4 &1178321623
 Transform:
   m_ObjectHideFlags: 0
@@ -6053,7 +5994,7 @@ Transform:
   m_GameObject: {fileID: 1178321621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.862698, y: 2.6, z: -19.149834}
+  m_LocalPosition: {x: 6.7, y: 2.6, z: 17.669998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6090,9 +6031,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SplineSettings:
-    Spline: {fileID: 0}
+    Spline: {fileID: 1178321622}
     Position: 0
-    Units: 1
+    Units: 0
   SplineOffset: {x: 0, y: 0, z: 0}
   CameraRotation: 0
   Damping:
@@ -6162,13 +6103,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295837960}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12981494, y: 0.8645608, z: -0.28621635, w: 0.3921261}
-  m_LocalPosition: {x: 4.84, y: 2.5, z: 20.35}
+  m_LocalRotation: {x: -0, y: 0.946234, z: -0.32348305, w: 0}
+  m_LocalPosition: {x: 6.73, y: 3.6, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 36.635, y: 131.206, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.747, y: 180, z: 0}
 --- !u!1 &1700118268
 GameObject:
   m_ObjectHideFlags: 0
