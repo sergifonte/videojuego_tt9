@@ -1,16 +1,23 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Instance : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject WaxBall;
+    public Transform InstancePoint;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Poop();
+        }
+    }
+
+    private void Poop()
+    {
+        var waxBall = Instantiate(WaxBall, InstancePoint.position, InstancePoint.rotation);
     }
 }
