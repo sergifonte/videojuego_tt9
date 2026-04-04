@@ -15,7 +15,11 @@ public class Instance : MonoBehaviour
     public GameObject Character; 
 
     //Mida inicial
-    private int index = 1; 
+    public int index = 1;
+
+    //Altres variables
+    private bool isColliding = false;
+    private GameObject currentBall;
 
     void Update() 
     {
@@ -25,11 +29,25 @@ public class Instance : MonoBehaviour
             {
                 Poop();
                 index++;
+                Debug.Log("Poop");
             }
             else { return; }
         }
 
-        size(); 
+        size();
+
+        if (Input.GetKeyDown(KeyCode.E) && isColliding)
+        {
+            if (index > 0)
+            {
+                Destroy(currentBall);
+                Debug.Log("Col·lisió correcta");
+                index--;
+            }
+            else { return; }
+        }
+
+        size();
     }
 
     private void Poop()
@@ -50,6 +68,24 @@ public class Instance : MonoBehaviour
             case 2:
                 Character.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f); //Mida petita
                 break; 
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("WaxBall"))
+        {
+            isColliding = true;
+            currentBall = other.gameObject;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("WaxBall"))
+        {
+            isColliding = false;
+            currentBall = null;
         }
     }
 }

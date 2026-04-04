@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 5236377529149031286}
   - component: {fileID: 2289602911459258372}
   - component: {fileID: 346615494288474280}
-  - component: {fileID: 3049315457690603060}
+  - component: {fileID: 5192597028385220031}
+  - component: {fileID: -4229501363372774857}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: WaxBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +110,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3049315457690603060
+--- !u!114 &5192597028385220031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519126629278128799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3551939ad65647b46be299c2873e9b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  waxBall: {fileID: 0}
+  isColliding: 0
+--- !u!54 &-4229501363372774857
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,5 +150,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
