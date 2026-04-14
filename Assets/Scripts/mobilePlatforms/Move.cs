@@ -12,11 +12,10 @@ public class Move : MonoBehaviour
     public float limit_1;
     public float limit_2;
     private int direction = 1; 
-    public float position_y = 1f;
 
     void Start()
     {
-        transform.position = new Vector3(position_x, position_y, position_z);
+        transform.position = new Vector3(position_x, 0, position_z);
     }
     void Update()
     {
@@ -30,4 +29,5 @@ public class Move : MonoBehaviour
         if (transform.position.z <= limit_1)
             direction = 1;
     }
+
 }
