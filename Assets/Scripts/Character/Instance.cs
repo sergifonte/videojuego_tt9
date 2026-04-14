@@ -20,6 +20,12 @@ public class Instance : MonoBehaviour
     //Altres variables
     private bool isColliding = false;
     private GameObject currentBall;
+    public static Instance instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Update() 
     {
@@ -55,7 +61,7 @@ public class Instance : MonoBehaviour
         var waxBall = Instantiate(WaxBall, InstancePoint.position, InstancePoint.rotation);
     }
 
-    private void size()
+    public void size()
     {
         switch (index)
         {

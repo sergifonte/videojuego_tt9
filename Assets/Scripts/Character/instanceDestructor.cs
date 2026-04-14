@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class instanceDestructor : MonoBehaviour
 {
-    public GameObject character;
+   // public GameObject character;
     public GameObject waxBall; 
     public bool isColliding = false; 
     
@@ -12,6 +12,8 @@ public class instanceDestructor : MonoBehaviour
         {
             Destroy(waxBall); 
         }
+
+        Instance.instance.size(); 
     }
 
     private void OnCollisionEnter(Collision other)
@@ -19,6 +21,7 @@ public class instanceDestructor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isColliding = true;
+            Instance.instance.index+= 1;
         }
     }
 

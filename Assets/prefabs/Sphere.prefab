@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 0}
-  waxBall: {fileID: 0}
+  waxBall: {fileID: 1519126629278128799}
   isColliding: 0
 --- !u!54 &-4229501363372774857
 Rigidbody:
