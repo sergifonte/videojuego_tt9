@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class instanceDestructor : MonoBehaviour
 {
-   // public GameObject character;
-    public GameObject waxBall; 
-    public bool isColliding = false; 
-    
+    public bool isColliding = false;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && isColliding)
         {
-            Destroy(waxBall); 
+            Instance.instance.index--;  
+            Instance.instance.size();
+            Destroy(gameObject);         
         }
-
-        Instance.instance.size(); 
     }
 
     private void OnCollisionEnter(Collision other)
@@ -21,7 +19,6 @@ public class instanceDestructor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isColliding = true;
-            Instance.instance.index+= 1;
         }
     }
 
@@ -33,3 +30,4 @@ public class instanceDestructor : MonoBehaviour
         }
     }
 }
+

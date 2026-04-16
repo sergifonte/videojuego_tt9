@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - WaxBall
+  - fireBall
   layers:
   - Default
   - TransparentFX

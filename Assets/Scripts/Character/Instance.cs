@@ -42,18 +42,6 @@ public class Instance : MonoBehaviour
 
         size();
 
-        if (Input.GetKeyDown(KeyCode.E) && isColliding)
-        {
-            if (index > 0)
-            {
-                Destroy(currentBall);
-                Debug.Log("Col·lisió correcta");
-                index--;
-            }
-            else { return; }
-        }
-
-        size();
     }
 
     private void Poop()
@@ -74,24 +62,6 @@ public class Instance : MonoBehaviour
             case 2:
                 Character.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f); //Mida petita
                 break; 
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("WaxBall"))
-        {
-            isColliding = true;
-            currentBall = other.gameObject;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("WaxBall"))
-        {
-            isColliding = false;
-            currentBall = null;
         }
     }
 }
