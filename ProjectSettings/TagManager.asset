@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WaxBall
   - fireBall
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
