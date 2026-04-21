@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Landed in moving platform");
-        if (collision.gameObject.CompareTag("MovingPlatform"))
+        // Comprovem si el que ha entrat és el jugador
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Attached to platform");
-            transform.SetParent(collision.transform);
+            // Fem que el jugador sigui fill de la plataforma
+            other.transform.SetParent(transform);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.CompareTag("MovingPlatform"))
+        if (other.CompareTag("Player"))
         {
-            transform.SetParent(null);
+            // En sortir, el jugador deixa de ser fill
+            other.transform.SetParent(null);
         }
     }
 }
