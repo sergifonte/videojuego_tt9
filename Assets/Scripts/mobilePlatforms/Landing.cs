@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class Landing : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        // Comprovem si el que ha entrat és el jugador
+        Debug.Log("Col·lisió jugador-plataforma"); 
         if (other.CompareTag("Player"))
         {
-            // Fem que el jugador sigui fill de la plataforma
+            Debug.Log("Jugador enganxat");
             other.transform.SetParent(transform);
         }
     }
@@ -16,7 +16,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // En sortir, el jugador deixa de ser fill
+             Debug.Log("Jugador enganxat");
             other.transform.SetParent(null);
         }
     }

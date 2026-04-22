@@ -52,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
 
         Vector3 finalMove = moveDirection * speed + new Vector3(0, velocity.y, 0);
         controller.Move(finalMove * Time.deltaTime);
+
     }
 
     void ApplyGravity()

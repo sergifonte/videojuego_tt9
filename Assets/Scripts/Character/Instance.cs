@@ -18,7 +18,6 @@ public class Instance : MonoBehaviour
     public int index = 1;
 
     //Altres variables
-    private bool isColliding = false;
     private GameObject currentBall;
     public static Instance instance;
 
