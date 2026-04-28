@@ -6353,7 +6353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acafaf45083e34488c207d4fed02188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthsprites: {fileID: 876612223}
+  _healthsprites: {fileID: 932226755}
 --- !u!4 &1122633411
 Transform:
   m_ObjectHideFlags: 0
@@ -6887,7 +6887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3778476e54a1574b99365e2cb55d704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 0.1
+  damageAmount: 1
 --- !u!1 &1797593249
 GameObject:
   m_ObjectHideFlags: 0
@@ -7474,10 +7474,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5271759303186665587, guid: d56c7b6b11a1d92488e0951d1e812ee5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5718018901728538438, guid: d56c7b6b11a1d92488e0951d1e812ee5, type: 3}
       propertyPath: m_Name
       value: VFX_Fire 1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7335331989846541417, guid: d56c7b6b11a1d92488e0951d1e812ee5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1700118270}
     - target: {fileID: 7791454336073511213, guid: d56c7b6b11a1d92488e0951d1e812ee5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.595308
