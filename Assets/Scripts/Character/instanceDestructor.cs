@@ -14,13 +14,12 @@ public class instanceDestructor : MonoBehaviour
         }
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             isColliding = true;
         }
-        //else { isColliding = false;  }
     }
 
     /*private void OnCollisionExit(Collision other)
