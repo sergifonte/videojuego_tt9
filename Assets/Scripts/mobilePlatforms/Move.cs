@@ -7,26 +7,21 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float speed = 3;
-    public float position_x;
-    public float position_z;
-    public float limit_1;
-    public float limit_2;
-    private int direction = 1; 
+    public Transform limit_1;
+    public Transform limit_2;
+    private int direction = 1;
+    bool onCollision = false; 
 
-    void Start()
-    {
-        transform.position = new Vector3(position_x, 0, position_z);
-    }
     void Update()
     {
         // Mou la plataforma en l'eix X
         transform.Translate(Vector3.forward * speed * direction * Time.deltaTime);
 
         // Comprova límits i canvia direcció
-        if (transform.position.z >= limit_2)
+        if (transform.position.z >= limit_2.position.z)
             direction = -1;
 
-        if (transform.position.z <= limit_1)
+        if (transform.position.z <= limit_1.position.z)
             direction = 1;
     }
 
