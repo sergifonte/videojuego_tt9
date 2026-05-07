@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class Landing : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    // Aquest mètode és especial per a CharacterController
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("Col·lisió jugador-plataforma"); 
-        if (other.CompareTag("Player"))
+        if (hit.gameObject.CompareTag("MovingPlatform"))
         {
-            Debug.Log("Jugador enganxat");
-            other.transform.SetParent(transform);
+            // Ens fem fills de la plataforma que hem colpejat
+            transform.SetParent(hit.transform);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else
         {
-             Debug.Log("Jugador enganxat");
-            other.transform.SetParent(null);
+            // Si el que trepitgem no és la plataforma, ens desenganxem
+            transform.SetParent(null);
         }
     }
 }
