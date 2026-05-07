@@ -18,10 +18,10 @@ public class Move : MonoBehaviour
         transform.Translate(Vector3.forward * speed * direction * Time.deltaTime);
 
         // Comprova límits i canvia direcció
-        if (transform.position.z >= limit_2.position.z)
+        if (transform.position.z >= limit_2.position.z -1)
             direction = -1;
 
-        if (transform.position.z <= limit_1.position.z)
+        if (transform.position.z <= limit_1.position.z +1)
             direction = 1;
     }
 
