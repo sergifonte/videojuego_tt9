@@ -20,6 +20,7 @@ public class Instance : MonoBehaviour
     //Altres variables
     private GameObject currentBall;
     public static Instance instance;
+    bool isColliding = false; 
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class Instance : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            if(index < 2)
+            if(index < 2 && !isColliding)
             {
                 Poop();
                 index++;
@@ -63,4 +64,17 @@ public class Instance : MonoBehaviour
                 break; 
         }
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("WaxBall"))
+        {
+            isColliding = true;
+        }
+        else
+        {
+            isColliding = false; 
+        }
+    }
 }
+

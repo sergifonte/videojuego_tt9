@@ -19,15 +19,14 @@ public class instanceDestructor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isColliding = true;
+            Debug.Log("Col·lisió instància-jugador"); 
+        }
+        else
+        {
+            isColliding = false;
+            Debug.Log("No hi ha col·lisió");
         }
     }
 
-    /*private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isColliding = false;
-        }
-    }*/
 }
 
