@@ -20,7 +20,7 @@ public class Instance : MonoBehaviour
     //Altres variables
     private GameObject currentBall;
     public static Instance instance;
-    bool isColliding = false; 
+    public bool isColliding = false; 
 
     private void Awake()
     {

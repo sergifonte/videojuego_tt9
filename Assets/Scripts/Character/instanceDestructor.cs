@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class instanceDestructor : MonoBehaviour
 {
-    public bool isColliding = false;
+    public Instance link; //enllaç amb la variable isColliding de l'script Instance
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isColliding)
+        if (Input.GetKeyDown(KeyCode.E) && link.isColliding)
         {
             Instance.instance.index--;  
             Instance.instance.size();
@@ -18,13 +18,12 @@ public class instanceDestructor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            isColliding = true;
+            link.isColliding = true;
             Debug.Log("Col·lisió instància-jugador"); 
         }
         else
         {
-            isColliding = false;
-            Debug.Log("No hi ha col·lisió");
+            link.isColliding = false; 
         }
     }
 
