@@ -7027,6 +7027,7 @@ MonoBehaviour:
   InstancePoint: {fileID: 1797593250}
   Character: {fileID: 1960265164}
   index: 1
+  isColliding: 0
 --- !u!23 &1960265167
 MeshRenderer:
   m_ObjectHideFlags: 0
