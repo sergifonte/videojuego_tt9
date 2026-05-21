@@ -11,6 +11,7 @@ public class instanceDestructor : MonoBehaviour
         {
             Instance.instance.index--;  
             Instance.instance.size();
+            Instance.instance.isColliding = false;
             Destroy(gameObject);         
         }
     }

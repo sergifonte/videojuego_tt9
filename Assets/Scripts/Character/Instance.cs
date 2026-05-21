@@ -71,9 +71,17 @@ public class Instance : MonoBehaviour
         {
             isColliding = true;
         }
-        else
+        /*else
         {
             isColliding = false; 
+        }*/
+    }
+
+    private void OnTriggerExit(ControllerColliderHit hit)
+    {
+        if (!hit.gameObject.CompareTag("WaxBall"))
+        {
+            isColliding = false;
         }
     }
 }
