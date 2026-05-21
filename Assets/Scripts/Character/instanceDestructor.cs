@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class instanceDestructor : MonoBehaviour
 {
-    public Instance link; //enllaç amb la variable isColliding de l'script Instance
+    //public Instance link; //enllaç amb la variable isColliding de l'script Instance
+    private bool playerIsClose = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && link.isColliding)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
             Instance.instance.index--;  
             Instance.instance.size();
@@ -14,16 +15,24 @@ public class instanceDestructor : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            link.isColliding = true;
-            Debug.Log("Col·lisió instància-jugador"); 
+            playerIsClose = true;
+            Instance.instance.isColliding = true; // Avisem al script de l'Emma
+            Debug.Log("Jugador a prop de la instància (Trigger Enter)");
         }
-        else
+    }
+
+    // Es dispara si el jugador s'allunya de la bola sense agafar-la
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            link.isColliding = false; 
+            playerIsClose = false;
+            Instance.instance.isColliding = false; // Avisem al script de l'Emma
+            Debug.Log("Jugador s'ha allunyat (Trigger Exit)");
         }
     }
 

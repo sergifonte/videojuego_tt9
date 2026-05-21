@@ -65,7 +65,7 @@ public class Instance : MonoBehaviour
         }
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnTriggerStay(ControllerColliderHit hit)
     {
         if (hit.gameObject.CompareTag("WaxBall"))
         {

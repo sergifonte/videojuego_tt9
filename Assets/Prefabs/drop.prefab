@@ -245,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3551939ad65647b46be299c2873e9b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  link: {fileID: 0}
 --- !u!54 &1513523929950696376
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -288,9 +287,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.56836694, y: 0.9341745, z: 0.5526525}
-  m_Center: {x: 0.00000001490116, y: 0, z: 0}
+  m_Size: {x: 1.1786308, y: 1.0800542, z: 1.2691498}
+  m_Center: {x: 0.030138016, y: 0.07293981, z: -0.004295349}
