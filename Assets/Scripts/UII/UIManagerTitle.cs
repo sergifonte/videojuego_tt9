@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIManagerTitle : MonoBehaviour
 {
-    public void ChangeToLevel()
+    public void ChangeToCinematic()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
     public void ChangeToAjustes()
     {

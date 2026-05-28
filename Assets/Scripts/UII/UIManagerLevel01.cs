@@ -15,7 +15,6 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // Opcional: Aquesta funció la pots assignar a un botó de "Tancar" (X) dins del menú
     public void TancarMenuAjustes()
     {
         if (menuAjustes != null)
