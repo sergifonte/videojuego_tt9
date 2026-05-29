@@ -60,6 +60,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8156810207450032710, guid: 05df7b2db8f3c4a55b2acf533f02ed17, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8156810207450032710, guid: 05df7b2db8f3c4a55b2acf533f02ed17, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8156810207450032710, guid: 05df7b2db8f3c4a55b2acf533f02ed17, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8156810207450032710, guid: 05df7b2db8f3c4a55b2acf533f02ed17, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8156810207450032710, guid: 05df7b2db8f3c4a55b2acf533f02ed17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 05df7b2db8f3c4a55b2acf533f02ed17, type: 3}
       propertyPath: m_Name
       value: MovingPlatform
