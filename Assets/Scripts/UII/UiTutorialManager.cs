@@ -8,15 +8,20 @@ public class TutorialUIController : MonoBehaviour
     [SerializeField] private GameObject textBotoAbans;
     [SerializeField] private GameObject textMesGran;
 
-    [Header("Configuració")]
-    [SerializeField] private string nomNivell1 = "Nivel1"; // Nom de l'escena del primer nivell
+    [Header("Referències de l'Escena")]
+    [Tooltip("Arrossega aquí el botó d'aquesta escena concreta")]
+    [SerializeField] private ReusableButton botoDeLaPantalla;
 
-    private bool botoPremut = false;
+    [Header("Configuració de l'Escena")]
+    [Tooltip("Índex del Build Settings de la següent escena")]
+    [SerializeField] private int buildIndexCinematic = 2;
+
     private bool dinsZonaBoto = false;
+    private bool dinsZonaPorta = false;
 
     void Start()
     {
-        // Ens assegurem que tot comença net i apagat
+        // Netegem la UI en arrencar
         if (textPremerE != null) textPremerE.SetActive(false);
         if (textBotoAbans != null) textBotoAbans.SetActive(false);
         if (textMesGran != null) textMesGran.SetActive(false);
@@ -24,49 +29,62 @@ public class TutorialUIController : MonoBehaviour
 
     void Update()
     {
-        // Si el jugador està al botó i prem la E...
-        if (dinsZonaBoto && !botoPremut && Input.GetKeyDown(KeyCode.E))
+        // 1. Amagar text de la gota automàticament si es destrueix
+        if (textPremerE != null && textPremerE.activeSelf)
         {
-            // Comprovem si és Gran (index == 0 segons el script de l'Emma)
-            if (Instance.instance != null && Instance.instance.index == 0)
+            if (Instance.instance != null && !Instance.instance.isColliding)
             {
-                botoPremut = true;
-                if (textMesGran != null) textMesGran.SetActive(false);
-                Debug.Log("Botó activat amb èxit!");
+                textPremerE.SetActive(false);
             }
-            else
+        }
+
+        // 2. Control de missatges dinàmics al Botó
+        if (dinsZonaBoto && botoDeLaPantalla != null)
+        {
+            if (botoDeLaPantalla.IsPressed)
             {
-                // Si no és gran, li recordem que s'ha de fer gran
+                if (textMesGran != null) textMesGran.SetActive(false);
+                if (dinsZonaPorta) CanviarDeNivell();
+            }
+            // Si intenta interactuar (E) però l'índex no és 0 (no és gran)
+            else if (Input.GetKeyDown(KeyCode.E) && Instance.instance != null && Instance.instance.index != 0)
+            {
                 if (textMesGran != null) textMesGran.SetActive(true);
             }
         }
     }
 
+    private void CanviarDeNivell()
+    {
+        SceneManager.LoadScene(buildIndexCinematic);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        // 1. S'apropa a la gota de cera
         if (other.CompareTag("WaxBall"))
         {
             if (textPremerE != null) textPremerE.SetActive(true);
         }
 
-        // 2. S'apropa al botó
-        if (other.CompareTag("Button") && !botoPremut)
+        if (other.CompareTag("Button"))
         {
             dinsZonaBoto = true;
-            // Alerta immediata si s'apropa i no té la mida adequada
-            if (Instance.instance != null && Instance.instance.index != 0)
+            // Si encara no està premut i no som grans, avisem
+            if (botoDeLaPantalla != null && !botoDeLaPantalla.IsPressed)
             {
-                if (textMesGran != null) textMesGran.SetActive(true);
+                if (Instance.instance != null && Instance.instance.index != 0)
+                {
+                    if (textMesGran != null) textMesGran.SetActive(true);
+                }
             }
         }
 
-        // 3. Arriba a la porta de sortida
         if (other.CompareTag("Porta"))
         {
-            if (botoPremut)
+            dinsZonaPorta = true;
+            if (botoDeLaPantalla != null && botoDeLaPantalla.IsPressed)
             {
-                SceneManager.LoadScene(nomNivell1); // Teletransport
+                CanviarDeNivell();
             }
             else
             {
@@ -77,7 +95,6 @@ public class TutorialUIController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // Netegem els textos en sortir de les zones
         if (other.CompareTag("WaxBall"))
         {
             if (textPremerE != null) textPremerE.SetActive(false);
@@ -91,6 +108,7 @@ public class TutorialUIController : MonoBehaviour
 
         if (other.CompareTag("Porta"))
         {
+            dinsZonaPorta = false;
             if (textBotoAbans != null) textBotoAbans.SetActive(false);
         }
     }
