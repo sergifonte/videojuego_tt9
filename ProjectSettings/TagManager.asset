@@ -9,6 +9,7 @@ TagManager:
   - MovingPlatform
   - InvisibleWall
   - Button
+  - Porta
   layers:
   - Default
   - TransparentFX
