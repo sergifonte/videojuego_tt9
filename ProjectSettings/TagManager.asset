@@ -8,6 +8,7 @@ TagManager:
   - fireBall
   - MovingPlatform
   - InvisibleWall
+  - Button
   layers:
   - Default
   - TransparentFX
