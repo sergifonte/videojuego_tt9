@@ -118,6 +118,8 @@ GameObject:
   - component: {fileID: 7608616793916266145}
   - component: {fileID: 6301100648022319058}
   - component: {fileID: 5438248712693681140}
+  - component: {fileID: 6823940325531842558}
+  - component: {fileID: 6254153022307943866}
   m_Layer: 0
   m_Name: MeltyCharacter
   m_TagString: Player
@@ -280,6 +282,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aa486a2456489448a9f6fdfca4404de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &6823940325531842558
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123247332069031318}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6b19367e244c64786bfa65fd7044dfb4, type: 3}
+  m_Controller: {fileID: 9100000, guid: bc1c6e8d7f01956468ea76173014564c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6254153022307943866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123247332069031318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936a41d9be9904e4a9e1da6597afb943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2893604000335925465
