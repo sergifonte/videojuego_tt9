@@ -54,13 +54,13 @@ public class Instance : MonoBehaviour
         switch (index)
         {
             case 0:
-                Character.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f); //Mida gran
+                Character.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f); //Mida gran
                 break;
             case 1: 
                 Character.transform.localScale = new Vector3(1f, 1f, 1f); //Mida mitjana
                 break;
             case 2:
-                Character.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f); //Mida petita
+                Character.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f); //Mida petita
                 break; 
         }
     }
