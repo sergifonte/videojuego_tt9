@@ -2,57 +2,52 @@ using UnityEngine;
 
 public class SizeUIController : MonoBehaviour
 {
-    [Header("Imatges de la UI")]
+    [Header("Instruccions UI")]
     [SerializeField] private GameObject smallSizeUI;
     [SerializeField] private GameObject mediumSizeUI;
     [SerializeField] private GameObject bigSizeUI;
 
-    // Guardem l'últim índex detectat per no estar activant/desactivant GameObjects inútilment
-    private int ultimIndexDetectat = -1;
+    private int lastIndex = -1;
 
     void Start()
     {
-        // Forcem l'actualització inicial de la UI en arrencar
-        ActualitzarInterficie();
+        UpdateUI();
     }
 
     void Update()
     {
-        // Si el script de l'Emma ja està llest a l'escena
-        if (Instance.instance != null)
+        if (Instance.instance != null) //script de l'instancia ha de carregar correctament abans
         {
             // Si el valor del seu index ha canviat des de l'últim fotograma, actualitzem la UI
-            if (Instance.instance.index != ultimIndexDetectat)
+            if (Instance.instance.index != lastIndex)
             {
-                ActualitzarInterficie();
+                UpdateUI();
             }
         }
     }
 
-    private void ActualitzarInterficie()
+    private void UpdateUI()
     {
-        // Si encara no s'ha creat la instància global (per seguretat), no fem res
         if (Instance.instance == null) return;
 
         // Actualitzem quin és l'índex actual que estem processant
-        ultimIndexDetectat = Instance.instance.index;
+        lastIndex = Instance.instance.index;
 
-        // Desactivem totes les imatges primer per "netejar" la UI
+        //destiva tota la UI predeterminat
         smallSizeUI.SetActive(false);
         mediumSizeUI.SetActive(false);
         bigSizeUI.SetActive(false);
 
-        // Activem només la que correspon segons el switch de l'Emma
-        switch (ultimIndexDetectat)
+        switch (lastIndex)
         {
             case 0:
-                bigSizeUI.SetActive(true);    // Mostra Mida Gran
+                bigSizeUI.SetActive(true);//gran
                 break;
             case 1:
-                mediumSizeUI.SetActive(true); // Mostra Mida Mitjana
+                mediumSizeUI.SetActive(true);//mig
                 break;
             case 2:
-                smallSizeUI.SetActive(true);  // Mostra Mida Petita
+                smallSizeUI.SetActive(true);//petit
                 break;
         }
     }

@@ -4,7 +4,7 @@ public class ControladorResolucio : MonoBehaviour
 {
     public void ConfigurarResolucioAlta()
     {
-        Screen.SetResolution(1920, 1080, FullScreenMode.Windowed);
+        Screen.SetResolution(1920, 1080, FullScreenMode.Windowed); //poso windowed perquè si em crashea el joc pugui minimitar-lo o tancar-lo
         Debug.Log("Forçat a 1920x1080 en mode Finestra");
     }
 

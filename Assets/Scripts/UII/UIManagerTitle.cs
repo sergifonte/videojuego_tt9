@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIManagerTitle : MonoBehaviour
-{
+{//els index es troben al aparta build profiles
     public void ChangeToPantallaCarga()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(8);

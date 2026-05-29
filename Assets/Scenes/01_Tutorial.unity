@@ -728,6 +728,7 @@ GameObject:
   - component: {fileID: 197628373}
   - component: {fileID: 197628376}
   - component: {fileID: 197628377}
+  - component: {fileID: 197628378}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -802,13 +803,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197628372}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.004632899, y: -0.7203244, z: -0.004461065, w: 0.69360757}
-  m_LocalPosition: {x: 43.16, y: 10.6, z: -46.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.12059043, y: -0.37940952, z: 0.04995019, w: 0.9159757}
+  m_LocalPosition: {x: 17.171574, y: 7, z: -50.828426}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -92.165, z: -0.737}
+  m_LocalEulerAnglesHint: {x: 15, y: -45, z: 0}
 --- !u!114 &197628376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +914,21 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &197628378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197628372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0615ebdbb9f86fe44be070344091e9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1429075253}
+  offset: {x: 4.7, y: 3, z: -5}
+  smoothTime: 0.1
 --- !u!4 &206861100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1103111447635401565, guid: 90dc86f95091ef94298c93dcc77db431, type: 3}
@@ -1077,7 +1093,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 936038408}
         m_TargetAssemblyTypeName: UiTutorial, Assembly-CSharp
-        m_MethodName: TancarMenuAjustes
+        m_MethodName: CloseConfiguration
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1500,8 +1516,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ControladorResolucio, Assembly-CSharp
+      - m_Target: {fileID: 936038408}
+        m_TargetAssemblyTypeName: UiTutorial, Assembly-CSharp
         m_MethodName: ConfigurarResolucioMitjana
         m_Mode: 1
         m_Arguments:
@@ -2057,8 +2073,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ControladorResolucio, Assembly-CSharp
+      - m_Target: {fileID: 936038408}
+        m_TargetAssemblyTypeName: UiTutorial, Assembly-CSharp
         m_MethodName: ConfigurarResolucioBaixa
         m_Mode: 1
         m_Arguments:
@@ -3746,6 +3762,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1309363476}
     m_Modifications:
+    - target: {fileID: 1317025578035714281, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5020950273591215005, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
       propertyPath: m_Name
       value: box (2)
@@ -4321,8 +4341,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ControladorResolucio, Assembly-CSharp
+      - m_Target: {fileID: 936038408}
+        m_TargetAssemblyTypeName: UiTutorial, Assembly-CSharp
         m_MethodName: ConfigurarResolucioAlta
         m_Mode: 1
         m_Arguments:
@@ -4923,6 +4943,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1309363476}
     m_Modifications:
+    - target: {fileID: 1317025578035714281, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5020950273591215005, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
       propertyPath: m_Name
       value: box
@@ -5218,6 +5242,11 @@ MonoBehaviour:
   textMesGran: {fileID: 675215136}
   botoDeLaPantalla: {fileID: 1932783248}
   buildIndexCinematic: 2
+--- !u!4 &1429075253 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1740303636755390795, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
+  m_PrefabInstance: {fileID: 3556712117363910326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1438476520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5226,6 +5255,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1309363476}
     m_Modifications:
+    - target: {fileID: 1317025578035714281, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5020950273591215005, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
       propertyPath: m_Name
       value: box (3)
@@ -6248,7 +6281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 936038408}
         m_TargetAssemblyTypeName: UiTutorial, Assembly-CSharp
-        m_MethodName: ObrirMenuAjustes
+        m_MethodName: OpenConfiguration
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7601,6 +7634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1309363476}
     m_Modifications:
+    - target: {fileID: 1317025578035714281, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5020950273591215005, guid: a07aea425a7360d46b3455375cf2e928, type: 3}
       propertyPath: m_Name
       value: box (1)
@@ -8207,6 +8244,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1103111447635401565, guid: 90dc86f95091ef94298c93dcc77db431, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580795984706930195, guid: 90dc86f95091ef94298c93dcc77db431, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

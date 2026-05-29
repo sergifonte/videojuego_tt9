@@ -8,10 +8,9 @@ public class VideoSceneChanger : MonoBehaviour
 
     void Start()
     {
-        // Quan el vídeo arribi al final, executarà directament el canvi d'escena
         if (meuVideoPlayer != null)
         {
-            meuVideoPlayer.loopPointReached += (vp) => UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        }
+            meuVideoPlayer.loopPointReached += (vp) => UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+        }//mode loop -> se'n va a l'escena del nivell 1
     }
 }

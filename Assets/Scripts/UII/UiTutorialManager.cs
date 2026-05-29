@@ -8,7 +8,7 @@ public class TutorialUIController : MonoBehaviour
     [SerializeField] private GameObject textBotoAbans;
     [SerializeField] private GameObject textMesGran;
 
-    [Header("Referències de l'Escena")]
+    [Header("Button")]
     [Tooltip("Arrossega aquí el botó d'aquesta escena concreta")]
     [SerializeField] private ReusableButton botoDeLaPantalla;
 
@@ -16,12 +16,12 @@ public class TutorialUIController : MonoBehaviour
     [Tooltip("Índex del Build Settings de la següent escena")]
     [SerializeField] private int buildIndexCinematic = 2;
 
-    private bool dinsZonaBoto = false;
-    private bool dinsZonaPorta = false;
+    private bool buttonZone = false;
+    private bool DoorZone = false;
 
     void Start()
     {
-        // Netegem la UI en arrencar
+        //setting la escena, s'esborra tot
         if (textPremerE != null) textPremerE.SetActive(false);
         if (textBotoAbans != null) textBotoAbans.SetActive(false);
         if (textMesGran != null) textMesGran.SetActive(false);
@@ -29,7 +29,7 @@ public class TutorialUIController : MonoBehaviour
 
     void Update()
     {
-        // 1. Amagar text de la gota automàticament si es destrueix
+        //Amagar text de la gota automàticament si es destrueix
         if (textPremerE != null && textPremerE.activeSelf)
         {
             if (Instance.instance != null && !Instance.instance.isColliding)
@@ -38,13 +38,12 @@ public class TutorialUIController : MonoBehaviour
             }
         }
 
-        // 2. Control de missatges dinàmics al Botó
-        if (dinsZonaBoto && botoDeLaPantalla != null)
+        if (buttonZone && botoDeLaPantalla != null)
         {
             if (botoDeLaPantalla.IsPressed)
             {
                 if (textMesGran != null) textMesGran.SetActive(false);
-                if (dinsZonaPorta) CanviarDeNivell();
+                if (DoorZone) CanviarDeNivell();
             }
             // Si intenta interactuar (E) però l'índex no és 0 (no és gran)
             else if (Input.GetKeyDown(KeyCode.E) && Instance.instance != null && Instance.instance.index != 0)
@@ -68,7 +67,7 @@ public class TutorialUIController : MonoBehaviour
 
         if (other.CompareTag("Button"))
         {
-            dinsZonaBoto = true;
+            buttonZone = true;
             // Si encara no està premut i no som grans, avisem
             if (botoDeLaPantalla != null && !botoDeLaPantalla.IsPressed)
             {
@@ -81,7 +80,7 @@ public class TutorialUIController : MonoBehaviour
 
         if (other.CompareTag("Porta"))
         {
-            dinsZonaPorta = true;
+            DoorZone = true;
             if (botoDeLaPantalla != null && botoDeLaPantalla.IsPressed)
             {
                 CanviarDeNivell();
@@ -102,13 +101,13 @@ public class TutorialUIController : MonoBehaviour
 
         if (other.CompareTag("Button"))
         {
-            dinsZonaBoto = false;
+            buttonZone = false;
             if (textMesGran != null) textMesGran.SetActive(false);
         }
 
         if (other.CompareTag("Porta"))
         {
-            dinsZonaPorta = false;
+            DoorZone = false;
             if (textBotoAbans != null) textBotoAbans.SetActive(false);
         }
     }
