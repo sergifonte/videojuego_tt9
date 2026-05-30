@@ -8,42 +8,46 @@ public class FireEnemy : MonoBehaviour
 
     public bool activeChasing = false;
 
-    private float startY;
+    // Farem servir una posició interna virtual per moure el "cos" de la bola de foc
+    private Vector3 positionSenseFlotar;
 
     void Start()
     {
-        startY = transform.position.y;
+        // Inicialitzem la nostra posició virtual on està la bola de foc al començar
+        positionSenseFlotar = transform.position;
     }
 
     void Update()
     {
         if (player != null)
         {
-            //Efecte flotant
+            // 1. Efecte flotant bàsic (Ona sinus fixa)
             float floatOffset = Mathf.Sin(Time.time * 2f) * 0.5f;
 
             if (activeChasing)
             {
-                //Movimentcap al jugador
-                Vector3 targetPosition = new Vector3(player.position.x, startY, player.position.z);
-                Vector3 direction = (targetPosition - transform.position).normalized;
-                transform.position += direction * speed * Time.deltaTime;
+                // 2. MOVIMENT 3D SENSE INTERFERÈNCIES
+                // Calculem la direcció des de la nostra posició virtual cap al jugador
+                Vector3 direction = (player.position - positionSenseFlotar).normalized;
 
-                //Rotació cap al jugador
+                // Movem la posició virtual (aquí no hi ha sinus, és un moviment net i lineal)
+                positionSenseFlotar += direction * speed * Time.deltaTime;
+
+                // 3. ROTACIÓ EN 3D
                 if (direction != Vector3.zero)
                 {
                     Quaternion targetRotation = Quaternion.LookRotation(direction);
                     transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
                 }
+            }
 
-                //Posició
-                transform.position = new Vector3(transform.position.x, startY + floatOffset, transform.position.z);
-            }
-            else
-            {
-                //Si està sol sense el jugador, només flota en el seu lloc original sense perseguir
-                transform.position = new Vector3(transform.position.x, startY + floatOffset, transform.position.z);
-            }
+            // 4. APLICACIÓ FINAL AL TRANSFORM
+            // Ajuntem la posició real de moviment (X, Y, Z) i li sumem el sinus NOMÉS a l'eix Y visual.
+            transform.position = new Vector3(
+                positionSenseFlotar.x,
+                positionSenseFlotar.y + floatOffset,
+                positionSenseFlotar.z
+            );
         }
     }
 }
