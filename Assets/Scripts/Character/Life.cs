@@ -5,7 +5,7 @@ public class Life : MonoBehaviour
     /*SCRIPT PER LES BOLES DE FOC QUE LI BAIXEN LA VIDA AL JUGADOR
       Detecta tant per col·lisió sòlida com per Trigger (transparent)*/
 
-    public float damageAmount = 0.1f;
+    public float damageAmount = 1.0f;
     private bool isColliding = false;
 
     private PlayerHealth playerHealth;
@@ -15,7 +15,7 @@ public class Life : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
     }
 
-    void Update()
+    void Update() //Això para el joc si el jugador es mor
     {
         if (playerHealth._currentHealth <= 0)
         {

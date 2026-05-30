@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float _maxHealth = 100;
-    public float _currentHealth;
+    public float _currentHealth; 
 
     [SerializeField] private HealthBar _healthBar;
 
