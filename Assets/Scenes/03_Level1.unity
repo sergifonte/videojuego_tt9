@@ -411,73 +411,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39489879}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &55425162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 55425163}
-  - component: {fileID: 55425165}
-  - component: {fileID: 55425164}
-  m_Layer: 0
-  m_Name: CheckPoint1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &55425163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55425162}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.16, y: 15.51, z: -58.11}
-  m_LocalScale: {x: 7.255969, y: 3.9870477, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 392052066}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &55425164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55425162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aefc5cb17eafb34dbeec23e8b1855b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntDeRespawnCustom: {fileID: 0}
---- !u!65 &55425165
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55425162}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &62058181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1907,10 +1840,10 @@ MonoBehaviour:
         z: 2.539353
       Rotation:
         value:
-          x: -0.11895563
-          y: 0.9504385
+          x: -0.11895565
+          y: 0.95043856
           z: 0.20208682
-          w: -0.20414971
+          w: -0.20414972
     - Position:
         x: 24.813204
         y: 12.246511
@@ -2034,9 +1967,9 @@ MonoBehaviour:
       Rotation:
         value:
           x: 0.8720686
-          y: -0.24957213
+          y: -0.24957214
           z: 0.41353783
-          w: 0.07871857
+          w: 0.078718565
     - Position:
         x: 31.93
         y: 7
@@ -2054,7 +1987,7 @@ MonoBehaviour:
           x: 0.7868125
           y: -0.6111239
           z: 0.04919632
-          w: 0.07094667
+          w: 0.07094666
     - Position:
         x: 31.93167
         y: 7
@@ -5051,7 +4984,6 @@ Transform:
   m_Children:
   - {fileID: 660780628}
   - {fileID: 2136068342}
-  - {fileID: 55425163}
   - {fileID: 2116689577}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11771,7 +11703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1015046688
 AudioListener:
   m_ObjectHideFlags: 0
@@ -22240,10 +22172,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136068342}
-  - component: {fileID: 2136068343}
-  - component: {fileID: 2136068344}
   m_Layer: 0
-  m_Name: CheckPoint1
+  m_Name: SpawnPuzzle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22258,46 +22188,12 @@ Transform:
   m_GameObject: {fileID: 2136068341}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91, y: 15.51, z: -33.57}
-  m_LocalScale: {x: 2.3495064, y: 2.9252, z: 1}
+  m_LocalPosition: {x: -0.4, y: 15.88, z: -32.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 392052066}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2136068343
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136068341}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2136068344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136068341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aefc5cb17eafb34dbeec23e8b1855b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntDeRespawnCustom: {fileID: 0}
 --- !u!1001 &2142469273
 PrefabInstance:
   m_ObjectHideFlags: 0
