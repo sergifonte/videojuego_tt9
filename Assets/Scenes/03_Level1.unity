@@ -13636,7 +13636,7 @@ MonoBehaviour:
         value:
           x: 0.090043396
           y: 0.77183545
-          z: 0.005008572
+          z: 0.005008574
           w: -0.6293943
     - Position:
         x: -42.95
@@ -82298,6 +82298,18 @@ PrefabInstance:
       propertyPath: damageAmount
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3510568868918939372, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: efd5a3d72662c1e4792cfb9f1f69f634, type: 3}
+    - target: {fileID: 3510568868918939372, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c03e3398d00f024ca7153d8a950d9ab, type: 3}
+    - target: {fileID: 3510568868918939372, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
+      propertyPath: footstepInterval
+      value: 0.317
+      objectReference: {fileID: 0}
     - target: {fileID: 5303734857772663601, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
       propertyPath: _healthBar
       value: 
@@ -82306,6 +82318,14 @@ PrefabInstance:
       propertyPath: _spawnPoint
       value: 
       objectReference: {fileID: 660780628}
+    - target: {fileID: 7608616793916266145, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
+      propertyPath: dropWaxSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ea5936a7922e4c447bb2859c68c8ad5b, type: 3}
+    - target: {fileID: 7608616793916266145, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
+      propertyPath: collectWaxSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e7c23c7ed37e33f4a88d95de85df2508, type: 3}
     m_RemovedComponents:
     - {fileID: 3357267528822070751, guid: 889adcd1f0f514b4dbb4819292115f23, type: 3}
     m_RemovedGameObjects: []

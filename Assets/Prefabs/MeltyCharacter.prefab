@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5438248712693681140}
   - component: {fileID: 6823940325531842558}
   - component: {fileID: 6254153022307943866}
+  - component: {fileID: 3357267528822070751}
   m_Layer: 0
   m_Name: MeltyCharacter
   m_TagString: Player
@@ -186,6 +187,9 @@ MonoBehaviour:
   jumpForce: 8
   gravity: -20
   rotationSpeed: 10
+  walkSound: {fileID: 8300000, guid: 7c03e3398d00f024ca7153d8a950d9ab, type: 3}
+  jumpSound: {fileID: 8300000, guid: efd5a3d72662c1e4792cfb9f1f69f634, type: 3}
+  footstepInterval: 0.5
 --- !u!114 &1769940613296030827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +219,7 @@ MonoBehaviour:
   _maxHealth: 100
   _currentHealth: 0
   _healthBar: {fileID: 0}
+  _spawnPoint: {fileID: 0}
 --- !u!114 &3229449090805217403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +248,8 @@ MonoBehaviour:
   WaxBall: {fileID: 6690708905304133956, guid: 951fee93c49168542b8f54a013a491a6, type: 3}
   InstancePoint: {fileID: 5228033410077084338}
   Character: {fileID: 2123247332069031318}
+  collectWaxSound: {fileID: 0}
+  dropWaxSound: {fileID: 8300000, guid: ea5936a7922e4c447bb2859c68c8ad5b, type: 3}
   index: 1
   isColliding: 0
 --- !u!54 &6301100648022319058
@@ -318,6 +325,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936a41d9be9904e4a9e1da6597afb943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &3357267528822070751
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123247332069031318}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2893604000335925465
 GameObject:
   m_ObjectHideFlags: 0

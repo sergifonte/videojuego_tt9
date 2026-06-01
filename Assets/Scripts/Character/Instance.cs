@@ -7,12 +7,17 @@ using UnityEngine;
 //FUNCIONA; NO TOCAR A NO SER QUE SIGUI PER CANVIAR PARÀMETRES O ESTRICTAMENT NECESSARI (SI US PLAU, CAL ASSEGURAR-SE ABANS QUE SIGUI SÍ O SÍ NECESSARI)//
 //Emma :)
 
+[RequireComponent(typeof(AudioSource))] 
 public class Instance : MonoBehaviour
 {
     //Aquestes variables s'assignen des de l'inspector de unity
     public GameObject WaxBall;
     public Transform InstancePoint;
-    public GameObject Character; 
+    public GameObject Character;
+
+    [Header("Audio Settings")] 
+    public AudioClip collectWaxSound;
+    public AudioClip dropWaxSound;
 
     //Mida inicial
     public int index = 1;
@@ -20,18 +25,24 @@ public class Instance : MonoBehaviour
     //Altres variables
     private GameObject currentBall;
     public static Instance instance;
-    public bool isColliding = false; 
+    public bool isColliding = false;
+    private AudioSource audioSource; 
 
     private void Awake()
     {
         instance = this;
     }
 
-    void Update() 
+    void Start() 
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if(index < 2 && !isColliding)
+            if (index < 2 && !isColliding)
             {
                 Poop();
                 index++;
@@ -41,12 +52,12 @@ public class Instance : MonoBehaviour
         }
 
         size();
-
     }
 
     private void Poop()
     {
         var waxBall = Instantiate(WaxBall, InstancePoint.position, InstancePoint.rotation);
+        PlaySound(dropWaxSound);
     }
 
     public void size()
@@ -56,12 +67,31 @@ public class Instance : MonoBehaviour
             case 0:
                 Character.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f); //Mida gran
                 break;
-            case 1: 
+            case 1:
                 Character.transform.localScale = new Vector3(1f, 1f, 1f); //Mida mitjana
                 break;
             case 2:
                 Character.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f); //Mida petita
-                break; 
+                break;
+        }
+    }
+
+    // Aquest mètode l'hauràs de cridar des de l'script de la bola de cera quan el jugador la reculli
+    public void CollectWax()
+    {
+        if (index > 0)
+        {
+            index--; // Reduïm l'índex per fer el personatge més gran
+            PlaySound(collectWaxSound); 
+        }
+    }
+
+  
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 
@@ -71,10 +101,6 @@ public class Instance : MonoBehaviour
         {
             isColliding = true;
         }
-        /*else
-        {
-            isColliding = false; 
-        }*/
     }
 
     private void OnTriggerExit(ControllerColliderHit hit)
