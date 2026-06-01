@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // <-- AFEGIT: Necessari per poder canviar d'escena
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {

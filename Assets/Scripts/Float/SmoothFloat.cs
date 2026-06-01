@@ -18,7 +18,6 @@ public class SmoothFloat : MonoBehaviour
 
     void Update()
     {
-        // Calculem l'ona de moviment bàsica (Sinus)
         float movimentOna = Mathf.Sin(Time.time * floatSpeed);
 
         if (comencarCapAbaix)
@@ -26,7 +25,6 @@ public class SmoothFloat : MonoBehaviour
             movimentOna = -movimentOna;
         }
 
-        // Apliquem la posició directament a la plataforma
         float newY = startY + movimentOna * floatHeight;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }

@@ -1,6 +1,4 @@
 using UnityEngine;
-
-[RequireComponent(typeof(AudioSource))] // Assegura que el botó té un AudioSource adjunt
 public class ReusableButton : MonoBehaviour
 {
     private Animator animator;
@@ -24,7 +22,7 @@ public class ReusableButton : MonoBehaviour
     {
         if (other.CompareTag("Player") && !IsPressed)
         {
-            // Comprova mida del script de l'emma amb l'instancia
+            //comprova script de l'emma amb l'instancia
             if (Instance.instance != null && Instance.instance.index == 0)
             {
                 ActivarBoto();

@@ -13380,7 +13380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &164807750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13473,9 +13473,9 @@ MonoBehaviour:
       Rotation:
         value:
           x: -0.1793821
-          y: 0.94136274
-          z: -0.12067189
-          w: 0.25902978
+          y: 0.94136286
+          z: -0.1206719
+          w: 0.2590298
     - Position:
         x: 30.75
         y: 7.66
@@ -13581,7 +13581,7 @@ MonoBehaviour:
       Rotation:
         value:
           x: 0.4336215
-          y: -0.47356716
+          y: -0.4735672
           z: -0.12658268
           w: 0.75609744
     - Position:
@@ -13796,10 +13796,10 @@ MonoBehaviour:
         z: 3.8619497
       Rotation:
         value:
-          x: 0.57857764
-          y: -0.4375112
+          x: 0.5785775
+          y: -0.4375111
           z: 0.57743824
-          w: -0.3746959
+          w: -0.37469596
     - Position:
         x: -32.6
         y: 16.08
@@ -13815,8 +13815,8 @@ MonoBehaviour:
       Rotation:
         value:
           x: 0.172476
-          y: 0.000000003916125
-          z: -0.255614
+          y: 0
+          z: -0.25561395
           w: 0.95126945
     m_MetaData:
     - Mode: 2
@@ -14712,7 +14712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.83
+      value: 34.41
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29989,11 +29989,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.06
+      value: -56.77
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.77
+      value: 30.27
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30597,7 +30597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.14
+      value: 33.97
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30634,6 +30634,10 @@ PrefabInstance:
     - target: {fileID: 7743838849832310034, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_Name
       value: PlataformaRodona (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929767515649016885, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34669,8 +34673,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.6650944, g: 0.83538526, b: 1, a: 1}
-  m_Intensity: 380.93
+  m_Color: {r: 0.11320752, g: 0.05927375, b: 0.0648054, a: 1}
+  m_Intensity: 100
   m_Range: 22.9
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -43142,7 +43146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.86
+      value: 31.36
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57050,11 +57054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.73587
+      value: 34.73
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.18
+      value: -57.5
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63634,7 +63638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.46
+      value: 33.17
       objectReference: {fileID: 0}
     - target: {fileID: 6934545942958804904, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63671,6 +63675,14 @@ PrefabInstance:
     - target: {fileID: 7743838849832310034, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
       propertyPath: m_Name
       value: PlataformaRodona (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929767515649016885, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929767515649016885, guid: 5aa5386ffac9a4d3aa836f0818318a5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68855,7 +68867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.69
+      value: 35.22
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84299,15 +84311,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.15
+      value: -64.58
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.78
+      value: 32.09
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59.75
+      value: -58.65
       objectReference: {fileID: 0}
     - target: {fileID: 3582914784861074799, guid: 01c1fb3511c774d9a9fe32710ddfda58, type: 3}
       propertyPath: m_LocalRotation.w

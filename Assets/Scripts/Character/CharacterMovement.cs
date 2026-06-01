@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))] // Assegura que el component existeix al GameObject
 public class CharacterMovement : MonoBehaviour
 {
     public float speed = 6f;
@@ -11,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("Audio Settings")]
     public AudioClip walkSound;
     public AudioClip jumpSound;
-    [Range(0.1f, 2f)] public float footstepInterval = 0.5f; // Cada quants segons sona un pas
+    [Range(0.1f, 2f)] public float footstepInterval = 0.5f;
 
     private CharacterController controller;
     private InputHandler input;
@@ -60,7 +59,6 @@ public class CharacterMovement : MonoBehaviour
         if (controller.isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
-        // Salt: Reproduïm el so just quan es prem el botó i estem a terra
         if (controller.isGrounded && input.JumpPressed)
         {
             velocity.y = jumpForce;
@@ -78,7 +76,6 @@ public class CharacterMovement : MonoBehaviour
 
     void HandleFootsteps()
     {
-        // Comprovem si s'està movent horitzontalment i està tocant a terra
         bool isMoving = new Vector2(input.MoveInput.x, input.MoveInput.y).sqrMagnitude > 0.01f;
 
         if (controller.isGrounded && isMoving)
@@ -88,17 +85,15 @@ public class CharacterMovement : MonoBehaviour
             if (footstepTimer >= footstepInterval)
             {
                 PlaySound(walkSound);
-                footstepTimer = 0f; // Reiniciem el temporitzador
+                footstepTimer = 0f;
             }
         }
         else
         {
-            // Si s'atura o salta, reiniciem el temporitzador perquè el primer pas soni immediatament en caminar
             footstepTimer = footstepInterval;
         }
     }
 
-    // Mètode auxiliar per reproduir sons sense trepitjar-se entre ells de cop
     void PlaySound(AudioClip clip)
     {
         if (clip != null)

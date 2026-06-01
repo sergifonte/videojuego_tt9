@@ -14,13 +14,12 @@ public class VolumeSlider : MonoBehaviour
     {
         if (volumeSlider == null || audioMixer == null) return;
 
-        float currentVolume; //volum actual
+        float currentVolume; 
         if (audioMixer.GetFloat(MIXER_PARAMETER, out currentVolume))
         {
             volumeSlider.value = currentVolume; //posició correcta al començar
         }
 
-        //event de canvi de volum
         volumeSlider.onValueChanged.AddListener(SetVolume);
     }
 

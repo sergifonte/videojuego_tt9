@@ -18,10 +18,9 @@ public class CameraFollowFixed : MonoBehaviour
     {
         if (target == null) return;
 
-        // Calculem la posició ideal on hauria d'estar la càmera
+        //posicio inicial
         Vector3 desiredPosition = target.position + offset;
 
-        // Movem la càmera de forma suau des de la seva posició actual fins a la ideal
         transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
     }
 }

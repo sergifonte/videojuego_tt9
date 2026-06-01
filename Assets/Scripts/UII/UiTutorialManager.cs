@@ -29,7 +29,6 @@ public class TutorialUIController : MonoBehaviour
 
     void Update()
     {
-        //Amagar text de la gota automàticament si es destrueix
         if (textPremerE != null && textPremerE.activeSelf)
         {
             if (Instance.instance != null && !Instance.instance.isColliding)
@@ -45,7 +44,8 @@ public class TutorialUIController : MonoBehaviour
                 if (textMesGran != null) textMesGran.SetActive(false);
                 if (DoorZone) CanviarDeNivell();
             }
-            // Si intenta interactuar (E) però l'índex no és 0 (no és gran)
+
+            //si intenta interactuar (E) però l'índex no és 0 (no és gran)
             else if (Input.GetKeyDown(KeyCode.E) && Instance.instance != null && Instance.instance.index != 0)
             {
                 if (textMesGran != null) textMesGran.SetActive(true);
@@ -68,7 +68,7 @@ public class TutorialUIController : MonoBehaviour
         if (other.CompareTag("Button"))
         {
             buttonZone = true;
-            // Si encara no està premut i no som grans, avisem
+            //si encara el botó no està clicat:
             if (botoDeLaPantalla != null && !botoDeLaPantalla.IsPressed)
             {
                 if (Instance.instance != null && Instance.instance.index != 0)
