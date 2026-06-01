@@ -9,12 +9,15 @@ public class instanceDestructor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            Instance.instance.index--;  
-            Instance.instance.size();
+            Instance.instance.CollectWax();
+
+                Instance.instance.size();
+
             Instance.instance.isColliding = false;
-            Destroy(gameObject);         
+            Destroy(gameObject);
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {

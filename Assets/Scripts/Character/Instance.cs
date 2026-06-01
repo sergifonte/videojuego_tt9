@@ -76,17 +76,17 @@ public class Instance : MonoBehaviour
         }
     }
 
-    // Aquest mètode l'hauràs de cridar des de l'script de la bola de cera quan el jugador la reculli
     public void CollectWax()
     {
         if (index > 0)
         {
-            index--; // Reduïm l'índex per fer el personatge més gran
+            index--; 
             PlaySound(collectWaxSound); 
+            size(); 
         }
     }
 
-  
+
     private void PlaySound(AudioClip clip)
     {
         if (clip != null && audioSource != null)

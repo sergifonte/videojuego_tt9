@@ -1,22 +1,30 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))] // Assegura que el botó té un AudioSource adjunt
 public class ReusableButton : MonoBehaviour
 {
     private Animator animator;
-    // Propietat pública per indicar a la porta o a la UI si esta clicat
+    private AudioSource audioSource; 
+
     public bool IsPressed { get; private set; } = false;
+
+    [Header("Audio Settings")]
+    public AudioClip buttonPressSound; 
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //condició amb tag Player al jugador i si el botó està premut
         if (other.CompareTag("Player") && !IsPressed)
         {
-            // comprova mida del script de l'emma amb l'instancia
+            // Comprova mida del script de l'emma amb l'instancia
             if (Instance.instance != null && Instance.instance.index == 0)
             {
                 ActivarBoto();
@@ -37,6 +45,11 @@ public class ReusableButton : MonoBehaviour
             animator.SetTrigger("Press");
         }
 
-        Debug.Log("Botó activat");
+        if (buttonPressSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonPressSound);
+        }
+
+        Debug.Log("Botó activat i so reproduït");
     }
 }
