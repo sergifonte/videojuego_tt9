@@ -1,38 +1,69 @@
 using UnityEngine;
-using System.Collections;
-
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float _maxHealth = 100;
-    public float _currentHealth; 
+    public float _maxHealth = 100f;
+    public float _currentHealth;
 
     [SerializeField] private HealthBar _healthBar;
+
+    public Transform _spawnPoint;
+
+    private CharacterController _characterController;
 
     void Start()
     {
         _currentHealth = _maxHealth;
+        _characterController = GetComponent<CharacterController>();
 
-        _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
+        if (_healthBar != null)
+        {
+            _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
+        }
     }
 
     public void TakeDamage(float amount)
     {
         _currentHealth -= amount;
-        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+        _currentHealth = Mathf.Clamp(_currentHealth, 0f, _maxHealth);
 
-        _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
+        if (_healthBar != null)
+        {
+            _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
+        }
 
         if (_currentHealth <= 0)
         {
-            Time.timeScale = 0f;
+            RespawnPerMort();
         }
     }
 
-    //(missatge Xènia PER EMMA):
-    //aquí hauria d'anar la funció que li baixés els PS al jugador ;) tècnicament tant el script com la healthbar estan ben lincats
-    //entenc que per veure visualment la barra baixar has de jugar amb l'opció de fill amount, es troba a: HEALTHBAR -> canvas -> backround -> fill
-    //dins del fill a l'inspector trobaras la secció IMAGE i allà tens aquesta opció de fill amount que va dels valors 0 al 1
-    //si necessites res avisa'm
+    private void RespawnPerMort()
+    {
+        Debug.Log("El jugador s'ha quedat sense espelma! Respawnejant...");
 
+        if (_spawnPoint != null)
+        {
+            //Desactivem el controller per evitar bugs
+            if (_characterController != null) _characterController.enabled = false;
+
+            //Teletransportem el personatge al spawn inicial
+            transform.position = _spawnPoint.position;
+            transform.rotation = _spawnPoint.rotation;
+
+            //Tornem a activar el controller per poder jugar
+            if (_characterController != null) _characterController.enabled = true;
+        }
+        else
+        {
+            Debug.LogError("ALERTA: No has assignat el Spawn Point a l'inspector del PlayerHealth!");
+        }
+
+        //Li tornem a donar tota la vida i actualitzem la barra
+        _currentHealth = _maxHealth;
+        if (_healthBar != null)
+        {
+            _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
+        }
+    }
 }
