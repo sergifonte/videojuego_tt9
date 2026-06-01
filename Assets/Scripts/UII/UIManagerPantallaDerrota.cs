@@ -2,7 +2,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIManagerPantallaDerrota : MonoBehaviour
-{//els index es troben al aparta build profiles
+{
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip defeatSound; 
+
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.loop = false; 
+
+        if (defeatSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(defeatSound);
+        }
+    }
 
     public void ChangeToPantallaPrincipal()
     {
@@ -13,6 +29,4 @@ public class UIManagerPantallaDerrota : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-
-
 }

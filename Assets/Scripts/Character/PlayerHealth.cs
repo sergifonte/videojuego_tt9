@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // <-- AFEGIT: Necessari per poder canviar d'escena
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -40,30 +41,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void RespawnPerMort()
     {
-        Debug.Log("El jugador s'ha quedat sense espelma! Respawnejant...");
-
-        if (_spawnPoint != null)
-        {
-            //Desactivem el controller per evitar bugs
-            if (_characterController != null) _characterController.enabled = false;
-
-            //Teletransportem el personatge al spawn inicial
-            transform.position = _spawnPoint.position;
-            transform.rotation = _spawnPoint.rotation;
-
-            //Tornem a activar el controller per poder jugar
-            if (_characterController != null) _characterController.enabled = true;
-        }
-        else
-        {
-            Debug.LogError("ALERTA: No has assignat el Spawn Point a l'inspector del PlayerHealth!");
-        }
-
-        //Li tornem a donar tota la vida i actualitzem la barra
-        _currentHealth = _maxHealth;
-        if (_healthBar != null)
-        {
-            _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
-        }
+        SceneManager.LoadScene(9);
     }
 }
